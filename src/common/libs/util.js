@@ -8,7 +8,7 @@ var util = exports;
 var READ_EVENTS = ['value', 'child_added', 'child_removed', 'child_updated', 'child_changed'];
 
 util.undef = undef;
-util.Firebase = global.Firebase || require('firebase');
+util.Firebase = global.Firebase || require('firebase-admin');
 
 util.isDefined = function(v) {
   return v !== undef;

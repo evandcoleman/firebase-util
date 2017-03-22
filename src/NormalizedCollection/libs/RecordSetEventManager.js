@@ -162,8 +162,6 @@ RecordList.prototype = {
     if( this.obs.filters.test(snap.val(), key, snap.getPriority()) ) {
       this.recs[key] = rec;
       this._putAfter(key, rec.prev);
-      console.log("HIII");
-      console.log(key);
       this._notify('child_added', key);
     }
     else {

@@ -357,7 +357,7 @@ util.isFirebaseRef = function(x) {
   // necessary because instanceof won't work on Firebase Query objects
   // so we can't simply do instanceof here
   var proto = Object.getPrototypeOf(x);
-  if( proto && proto.constructor === util.Firebase.prototype.constructor ) {
+  if( proto && proto.constructor === util.Firebase.database.Reference.prototype.constructor ) {
     return true;
   }
 

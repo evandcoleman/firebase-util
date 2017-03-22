@@ -11,9 +11,9 @@ var RecordSet     = require('./RecordSet');
  * @param {...object} path
  * @constructor
  */
-function NormalizedCollection(path) { //jshint unused:vars
-  assertPaths(arguments);
-  this.pathMgr = new PathManager(util.toArray(arguments));
+function NormalizedCollection(paths) { //jshint unused:vars
+  assertPaths(paths);
+  this.pathMgr = new PathManager(paths);
   this.map = new FieldMap(this.pathMgr);
   this.filters = new Filter();
   this.finalized = false;

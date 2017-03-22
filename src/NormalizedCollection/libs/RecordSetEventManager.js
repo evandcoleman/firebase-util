@@ -46,15 +46,15 @@ RecordSetEventManager.prototype = {
   },
 
   _add: function(snap, prevChild) {
-    this.recList.add(snap.key(), prevChild);
+    this.recList.add(snap.key, prevChild);
   },
 
   _remove: function(snap) {
-    this.recList.remove(snap.key());
+    this.recList.remove(snap.key);
   },
 
   _move: function(snap, prevChild) {
-    this.recList.move(snap.key(), prevChild);
+    this.recList.move(snap.key, prevChild);
   }
 };
 
@@ -162,6 +162,8 @@ RecordList.prototype = {
     if( this.obs.filters.test(snap.val(), key, snap.getPriority()) ) {
       this.recs[key] = rec;
       this._putAfter(key, rec.prev);
+      console.log("HIII");
+      console.log(key);
       this._notify('child_added', key);
     }
     else {

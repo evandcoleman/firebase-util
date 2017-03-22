@@ -4,7 +4,7 @@ var util = require('../../common');
 
 function NormalizedSnapshot(ref, snaps) {
   this._ref = ref;
-  this._rec = ref.$getRecord();
+  this._rec = ref._rec;
   if( !util.isArray(snaps) ) {
     throw new Error('Must provide an array of snapshots to merge');
   }

@@ -78,9 +78,9 @@ FieldMap.prototype = {
    */
   extractData: function(snapshot, isExport) {
     var out = {};
-    var pathName = this.pathMgr.getPathName(snapshot.ref().toString());
-    if( pathName === null && snapshot.ref().parent() !== null ) {
-      var parentPath = this.pathMgr.getPathFor(snapshot.ref().parent().toString());
+    var pathName = this.pathMgr.getPathName(snapshot.ref.toString());
+    if( pathName === null && snapshot.ref.parent !== null ) {
+      var parentPath = this.pathMgr.getPathFor(snapshot.ref.parent.toString());
       if( parentPath && parentPath.hasDependency() ) {
         pathName = parentPath.name();
       }
@@ -89,7 +89,7 @@ FieldMap.prototype = {
     util.each(this.fieldsFor(pathName), function(f) {
       switch(f.id) {
         case '$key':
-          putIn(out, f.alias, snapshot.key());
+          putIn(out, f.alias, snapshot.key);
           break;
         case '$value':
           putIn(out, f.alias, snapshot[fx]());

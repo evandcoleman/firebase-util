@@ -268,7 +268,7 @@ ValueEventManager.prototype = {
   update: function(pathName, snap) {
     this.snaps[pathName] = snap;
     this._checkLoadState();
-    util.log('Record.ValueEventManager.update: url=%s, loadCompleted=%s', snap.ref().toString(), this.loadCompleted);
+    util.log('Record.ValueEventManager.update: url=%s, loadCompleted=%s', snap.ref.toString(), this.loadCompleted);
     if( this.loadCompleted ) {
       this.rec.trigger(new SnapshotFactory('value', this.rec.getName(), util.toArray(this.snaps)));
     }

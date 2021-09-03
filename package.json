@@ -1,5 +1,5 @@
 {
-  "name": "firebase-util",
+  "name": "@evandcoleman/firebase-util",
   "description": "A set of experimental power tools for Firebase.",
   "version": "0.2.5",
   "author": "Firebase (https://firebase.google.com/)",
